@@ -1,1 +1,5 @@
-The files in this folder are blank so that you can add your own css. The original css files are located 2 folder levels back in the "sources" folder
+UI files for the Custom Background Image and Gear Icon plugin.
+
+This changes the deck browser, deck overview screen (the screen after selecting a deck), the top and bottom toolbar.
+
+NOTE: Windows has backslashes instead of forward slashes, so you may need to change the file path accordingly.
