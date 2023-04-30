@@ -1,0 +1,187 @@
+@import url("_anki-tooltips.css");
+
+:root {
+	--primary-font: "FOT-RodinWanpaku Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif; /*FOT-RodinWanpaku Pro EB*/
+    --primary-font-weight: 800;
+    --ui-font:"FOT-Seurat Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif !important; /* FOT-Seurat Pro B*/
+    --ui-font-weight: 700;
+    --ui-accent-font: "nintendoP_Humming-E_002pr", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif; /* FOT-Humming Std B */
+    --ui-accent-font-weight: 700;
+	--code-font: "JetBrains Mono NL", Consolas,Menlo,Monaco,monospace !important;
+    --primary-font-color: #81715c;
+	--accent-font-color: #10b5ce;
+    --code-font-color: #fffbe7;
+	--code-highlight-color: #13ad9d;
+    --code-border-radius: 0.3em;
+    --cloze-highlight-color: #fecb00;
+	--font-scaling-large: clamp(1rem, 2.5vw, 1.15rem);
+	--font-scaling-small: clamp(0.85rem, 2vw, 1rem);
+    --title-font-scaling: clamp(1.35rem, 5vw, 1.6rem);
+    --wrapper-background-color: #fffbe7;
+    /* --tippy-container-color: #3aada8; */
+    --tippy-container-color: hsla(177, 48%, 46%, 0.925);
+    --color-background-font-color: #fffbe7;
+}
+
+html {
+	min-height: 100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em !important;
+  background-color: transparent;
+}
+
+hr {
+    border: 1px dashed var(--primary-font-color);
+    background-color: transparent;;
+}
+
+.label {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 1.5rem;
+}
+
+i {
+	font-family: var(--code-font);
+    font-weight: 400;
+	background-color: #4b320a;
+    color: var(--code-font-color);
+    font-style: normal;
+    font-size: clamp(0.8125rem, 2.5vw, 0.934375rem);
+    /* margin: 0 -.05em; */
+    /* new margin for better word spacing */
+    margin: 0 0.25em;
+    padding: .225em .3em;
+    border-radius: var(--code-border-radius);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+b {
+    color: var(--accent-font-color);
+}
+
+.wrapper {
+    box-sizing: border-box !important;
+    margin-top: 1rem;
+    background:var(--wrapper-background-color);
+    padding: 4.5rem 2rem;
+    /* padding: 30vh 20vw; */
+    border-radius: 2.5rem;
+}
+
+
+.text-container {
+    font-family: var(--primary-font);
+    font-weight: var(--ui-accent-font-weight); /* seems to be more readable @ 700 */
+    font-size: var(--font-scaling-small);
+    text-align: left;
+	color: var(--primary-font-color) !important;
+    max-width: 48rem;
+	margin: 0 auto;
+    padding: 1rem;
+	hyphens: auto;
+}
+
+#text {
+   line-height: 2.75rem !important;
+}
+
+#type {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: right;
+    color: #fffbe7;
+    background: #e8b001;
+    border-radius: 0.8rem;
+    padding: 0.15rem 0.6rem;
+    box-sizing: border-box;
+}
+
+#title {
+    font-family: var(--ui-accent-font);
+    font-size: var(--title-font-scaling);
+    font-weight: var(--ui-accent-font-weight);
+    color: var(--primary-font-color);
+    line-height: 1.5;
+}
+
+img {
+    /* padding: 0 1rem !important; */
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    border-radius: 8px;
+}
+
+.text > img:first-child {
+    margin: 0 auto;
+}
+
+
+/* Additional styling */
+
+
+
+@media screen and (max-width: 37em) {
+    #type {
+        text-align: left;
+        margin: 1.15rem 0;
+    }
+    .label {
+        margin-bottom: 0;
+    }
+    .wrapper {
+        padding: 4.5rem 2rem;
+    }
+    .label {
+        justify-content: left;
+    }
+}
+
+/* set a fixed max width for the wrapper (for readability) */
+@media screen and (min-width: 48em) {
+    .text-container {
+        width: 48rem;
+    }
+}
+
+/* tippy.js animation popup-- fallback if the CSS file doesn't load.*/
+.tippy-box[data-animation=scale][data-placement^=top] {
+  transform-origin: bottom;
+}
+
+.tippy-box[data-animation=scale][data-placement^=bottom] {
+  transform-origin: top;
+}
+
+.tippy-box[data-animation=scale][data-placement^=left] {
+  transform-origin: right;
+}
+
+.tippy-box[data-animation=scale][data-placement^=right] {
+  transform-origin: left;
+}
+
+.tippy-box[data-animation=scale][data-state=hidden] {
+  transform: scale(.5);
+  opacity: 0;
+}
+
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+.tippy-box {
+  transition-property: transform, visibility, opacity;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  transition-timing-function: cubic-bezier(.54, 1.5, .38, 1.11);
+}
+
