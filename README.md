@@ -44,6 +44,8 @@ Overall, I'm quite happy of the UX experience this theme provides, as the behavi
 
 If you just want the card templates (minus the UI), pull/download the `.apkg` file, then open it (opens in Anki). This includes a test deck pre-formatted with the right styling.
 
+Also, to get the right fonts, unzip the `fonts.zip` and install these on your System. Otherwise, there are fallback fonts. (Future Improvement: add similar fallback fonts)
+
 If you also want the UI (full experience), follow the Dependencies section below.
 
 ## Dependencies
