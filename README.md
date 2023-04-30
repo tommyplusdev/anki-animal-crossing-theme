@@ -86,6 +86,8 @@ Optional: If you also want to be able to use the interactive tooltip while hover
 1840818335
 ```
 
+NOTE: This plugin will break any code that contains either a `<` or `>` i.e. HTML or Markdown code [(See here.)](https://github.com/kleinerpirat/anki-tooltips/issues/6)
+
 After installing the add-ons, restart your Anki client. There's nothing else to do, as the cards are already configured to load in the script from the tooltips & make use of the `Fill the blanks` plugin.
 
 If you have issues with the tooltip, you can remove the line of code that loads in the Tooltip script at the beginning of the Front/Back, and re-install it using the plugin itself (this will automatically re-append the script to your cards with your computer's file path).
