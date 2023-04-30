@@ -1,7 +1,6 @@
 # anki-animal-crossing-theme
 
-![Anki_AC_coding_EN](https://user-images.githubusercontent.com/116316499/230499493-0d28fcd7-b34d-4ea9-a70a-3259d30950fa.png)
-
+<img width="727" alt="cloze_programming_anki_AC_2_JP" src="https://user-images.githubusercontent.com/116316499/235375635-113cbf00-516b-4859-8b01-9690246a26e8.png">
 
 ## About
 I was inspired by the UI design from Animal Crossing, so I decided to make something similar for Anki.
@@ -19,6 +18,10 @@ Overall, I'm quite happy of the UX experience this theme provides, as the behavi
 
 - Subject / Note types are now colored labels that change depending on the subject studied. 
 > JavaScript has a yellow label, HTML red, CSS blue and so-on. The default is gray to represent an unknown type.
+> For a good UX, I've added some unused colors, a standard color list for common web development programming languages and encapsulated the code so it's easy to put your own color if it's not there.
+
+- Type Auto-Correct
+> If you're like me and don't feel like spelling Javascript or Typescript correctly (correct being: JavaScript/TypeScript), there is a built-in autocorrector. Feel free to add your own autocorrect code.
 
 - New custom tooltips on hover on card review
 > I've adjusted the theme to work with Tippy Tooltips or [kleinerpirat's Anki Tooltip](https://github.com/kleinerpirat/anki-tooltips) add-on to match the "inspect" interaction from Animal Crossing.
@@ -48,6 +51,14 @@ The hint block would show up earlier than expected, because the old timer functi
 To solve this, the timer obviously needed to be reset on every script load, or every time a new flashcard (of the same type) loads in. Though, in practice, it wasn't that simple, as Anki sometimes has inconsistent rendering cycles, because of the way flashcards are loaded into the same webpage.
 
 To make sure it's _always_ loaded in at the right times, I added a simple check to see if the document's ready state was complete, if not, add an event handler attached to the global window object to check if the page is entirely loaded, then synchronise the function execution at the next browser painting step.
+
+## Future Improvements
+
+Using `async` and `await` could be a good way to refactor, but it's not worth the bug testing because of the way Anki works. I'm satisfied with how robust and performant the code is at the moment.
+
+I could also rewrite this so more OOP principles are followed and make use of the `static` keyword to make helper methods, etc.
+
+For this project, functional programming sufficed and does the job.
 
 ## What's left to be done?
 ~Since this is mostly based on the Dark Mode theme— I'm currently working on porting over the custom card types to the new visual design.~ 
