@@ -58,7 +58,9 @@ For the general UI styling, you'll need the [Custom Background Image and Gear Ic
 1210908941
 ```
 
-Enter the `Custom Background Image and Gear Icon` configuration and change the background setting to the `dot_tile_animal_crossing_bg.png` file.
+You'll need to replace the default `user_files` with the one included with this theme (`anki-ui/user_files`). Select the Plugin and click `View Files` to open up the right file path.
+
+After, enter the `Custom Background Image and Gear Icon` configuration and change the background setting to the `dot_tile_animal_crossing_bg.png` file.
 
 That's all you need, but I recommend these optional plugins for the complete UX experience.
 
