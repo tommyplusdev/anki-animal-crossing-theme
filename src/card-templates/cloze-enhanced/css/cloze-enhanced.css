@@ -1,0 +1,349 @@
+@import url("_anki-tooltips.css");
+
+:root {
+	--primary-font: "FOT-RodinWanpaku Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif; /*FOT-RodinWanpaku Pro EB*/
+    --primary-font-weight: 800;
+    --ui-font:"FOT-Seurat Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif !important; /* FOT-Seurat Pro B*/
+    --ui-font-weight: 700;
+    --ui-accent-font: "nintendoP_Humming-E_002pr", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif; /* FOT-Humming Std B */
+    --ui-accent-font-weight: 700;
+	--code-font: "JetBrains Mono NL", Consolas,Menlo,Monaco,monospace !important;
+    --primary-font-color: #81715c;
+	--accent-font-color: #10b5ce;
+    --code-font-color: #fffbe7;
+	--code-highlight-color: #13ad9d;
+    --code-border-radius: 0.3em;
+    --cloze-highlight-color: #fecb00;
+	--font-scaling-large: clamp(1rem, 2.5vw, 1.15rem);
+	--font-scaling-small: clamp(0.85rem, 2vw, 1rem);
+    --ui-font-scaling-small: clamp(0.85rem, 2vw, 0.95rem);
+    --title-font-scaling: clamp(1.35rem, 5vw, 1.6rem);
+    --wrapper-background-color: #fffbe7;
+    /* --tippy-container-color: #3aada8; */
+    --tippy-container-color: hsla(177, 48%, 46%, 0.925);
+    --color-background-font-color: #fffbe7;
+    --extra-note-wrapper-color: #ffeea0;
+}
+
+/* UI layout */
+html {
+    min-height: 100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+hr#answer {
+    margin-top: 2rem;
+}
+
+::-webkit-scrollbar {
+    width: 0.5em !important;
+    background-color: transparent;
+}
+
+img {
+    /* padding: 0 1rem !important; */
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    border-radius: 8px;
+}
+
+#text > img:first-child {
+    margin: 0 auto;
+}
+
+.backExtraImg > img {
+    width: 100%;
+}
+
+/* UI elements */
+
+.label {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 1.5rem;
+}
+
+.backExtraBlock {
+    font-family: var(--ui-accent-font);
+    font-size: var(--ui-font-scaling-small);
+    line-height: 2.4rem !important;
+    font-weight: var(--ui-accent-font-weight);
+    /* background-color: #fcf3cc; */
+    /* background-color: hsla(207, 51%, 21%, 0.5); */
+    background-color: #ffeea0;
+    color: #8b7658;
+    /* color: #d9f8f8; */
+    text-align: left;
+    border-radius: 6px;
+    max-width: 45rem;
+    margin: 2rem 0 0 0 !important;
+    padding: 1.7rem;
+}
+
+.backExtraBlock {
+    animation: pop 0.7s ease;
+}
+  
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* image only, background is transparent */
+.backExtraImg {
+	padding: 0;
+	max-width: 48rem;
+	margin: 0;
+    background: transparent;
+}
+
+/* image + text, background returns to normal bg color */
+.backExtraBlockImgAndText {
+	padding: 1.7rem !important;
+    background: var(--extra-note-wrapper-color);
+}
+
+hr {
+    border: 1px dashed var(--primary-font-color);
+    background-color: transparent;;
+}
+
+/* text styling */
+
+i,
+.backExtraBlock b,
+.qaText {
+    color: var(--code-font-color);
+    font-size: clamp(0.8125rem, 2.5vw, 0.934375rem);
+    font-style: normal;
+    /* margin: 0 -.05em; */
+    /* new margin for better word spacing */
+    margin: 0 0.25em;
+    padding: .225em .3em;
+    border-radius: var(--code-border-radius);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+i,
+.qaText {
+    background-color: #4b320a;
+}
+
+i {
+    font-weight: 400;
+    font-family: var(--code-font);
+}
+
+.backExtraBlock b {
+    font-family: var(--ui-accent-font);
+}
+
+.qaText {
+    font-size: var(--font-scaling-small);
+}
+
+  /* if <i> code is inside of cloze */
+/* .cloze:nth-of-type(n) i {
+    font-family: var(--code-font);
+    color: var(--code-font-color);
+    background: none;
+    font-weight: regular;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    -webkit-box-decoration-break: none;
+    box-decoration-break: none;
+} */
+b {
+    color: var(--accent-font-color);
+}
+
+
+/* if bold is used inside on the back side */
+.backExtraBlock b {
+    background: var(--code-highlight-color);
+    color: var(--code-font-color);
+    line-height: 2rem;
+}
+
+  /* if <i> element is inside extra block */
+
+/* .night_mode .backExtraBlock i {
+    background: #333333;
+    color: white;
+    line-height: 2rem;
+} */
+
+/* misc styling  */
+
+.hidden {
+      display: none !important;
+}
+
+/* for tippy.js add-on override */
+a[data-tippy-content] {
+    color: var(--accent-font-color);
+    text-decoration: underline dotted;
+    text-underline-offset: 3px;
+}
+
+.tippy-box {
+    font-family: var(--ui-font);
+    font-weight: var(--ui-font-weight);
+    background-color: var(--tippy-container-color);
+    color: var(--color-background-font-color);
+    padding: 0.1rem;
+    border-radius: 20px;
+}
+
+.tippy-arrow {
+    color: var(--tippy-container-color);
+}
+
+body {
+    width: 100%;
+}
+
+#qa {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wrapper {
+    box-sizing: border-box !important;
+    max-width: 54rem;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: 1rem;
+    background: var(--wrapper-background-color);
+    padding: 4.5rem 2rem;
+    /* padding: 30vh 20vw; */
+    border-radius: 2.5rem;
+}
+
+.text-container {
+    font-family: var(--primary-font);
+    font-weight: var(--ui-accent-font-weight); /* seems to be more readable @ 700 */
+    font-size: var(--font-scaling-small);
+    text-align: left;
+	color: var(--primary-font-color) !important;
+    max-width: 48rem;
+	margin: 0 auto;
+    padding: 1rem;
+	hyphens: auto;
+}
+
+#text {
+   line-height: 2.5rem !important;
+}
+
+#type {
+    font-family: var(--primary-font);
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: right;
+    color: #fffbe7;
+    background: #e8b001;
+    border-radius: 0.8rem;
+    padding: 0.15rem 0.6rem;
+    box-sizing: border-box;
+}
+
+/* .cloze:nth-of-type(n) {
+    color: white;
+    background: #666666;
+    padding: 0.35rem 0.25rem;
+    font-weight: 500;
+} */
+
+/* This is the [...] cloze element */
+.cloze:nth-of-type(n) {
+    color: var(--primary-font-color) !important;
+    background: var(--cloze-highlight-color) !important;
+    font-weight: var(--ui-font-weight) !important;
+    margin: 0 -.05em;
+    padding: .2em .3em;
+    border-radius: .13em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+#title {
+    font-family: var(--ui-accent-font);
+    font-size: var(--title-font-scaling);
+    font-weight: var(--ui-accent-font-weight);
+    color: var(--primary-font-color);
+    line-height: 1.5;
+}
+
+  /* Additional styling */
+em {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 37em) {
+    #type {
+        text-align: left;
+        margin: 1.15rem 0;
+    }
+    .label {
+        margin-bottom: 0;
+    }
+    .wrapper {
+        padding: 4.5rem 2rem;
+    }
+    .label {
+        justify-content: left;
+    }
+}
+
+/* @media screen and (min-width: 53em) {
+    .text-container {
+        width: 48rem;
+    }
+} */
+
+/* tippy.js animation popup-- fallback if the CSS file doesn't load.*/
+.tippy-box[data-animation=scale][data-placement^=top] {
+  transform-origin: bottom;
+}
+
+.tippy-box[data-animation=scale][data-placement^=bottom] {
+  transform-origin: top;
+}
+
+.tippy-box[data-animation=scale][data-placement^=left] {
+  transform-origin: right;
+}
+
+.tippy-box[data-animation=scale][data-placement^=right] {
+  transform-origin: left;
+}
+
+.tippy-box[data-animation=scale][data-state=hidden] {
+  transform: scale(.5);
+  opacity: 0;
+}
+
+.tippy-box[data-animation=fade][data-state=hidden] {
+  opacity: 0;
+}
+
+.tippy-box {
+  transition-property: transform, visibility, opacity;
+}
+
+.tippy-box[data-inertia][data-state=visible] {
+  transition-timing-function: cubic-bezier(.54, 1.5, .38, 1.11);
+}
