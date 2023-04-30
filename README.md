@@ -40,17 +40,45 @@ Overall, I'm quite happy of the UX experience this theme provides, as the behavi
 - New CSS animations for flashcard front-back transitions
 > Some elements have pop-in animations to stagger the clunky DOM reload from Anki.
 
+## Installation
+
+If you just want the card templates (minus the UI), pull/download the `.apkg` file, then open it (opens in Anki). This includes a test deck pre-formatted with the right styling.
+
+If you also want the UI (full experience), follow the Dependencies section below.
+
 ## Dependencies
 
-If you'd like to use the programming cards, you'll need to have the [Fill the blanks](https://ankiweb.net/shared/info/1933645497) plugin.
+Note: to install Add-ons: Anki Toolbar > Add-ons > Get Add-ons...
 
-Anki Toolbar > Add-ons > Get Add-ons...
+For the general UI styling, you'll need the [Custom Background Image and Gear Icon](https://ankiweb.net/shared/info/1210908941) plugin. This is in addition to the card templates which have their own styling.
+
+```
+1210908941
+```
+
+Enter the `Custom Background Image and Gear Icon` configuration and change the background setting to the `dot_tile_animal_crossing_bg.png` file.
+
+That's all you need, but I recommend these optional plugins for the complete UX experience.
+
+Optional: [Speed Focus Mode (auto-alert, auto-reveal, auto-answer)](https://ankiweb.net/shared/info/1046608507)
+
+```
+1046608507
+```
+
+You'll need to change the timer to a suitable answer timeframe for you. I recommend this setting:
+
+<img width="484" alt="timer_config" src="https://user-images.githubusercontent.com/116316499/235377464-87288f7d-51fc-4cde-a19a-90fc0501aa6b.png">
+
+Bonus: The included default timer sound effect (SFX) is annoying, so I've added a Animal Crossing jingle `.mp3` file in this theme. You'll need to visit the local files and replace the default SFX with the new SFX.
+
+Optional: If you'd like to use the programming cards, you'll need to have the [Fill the blanks](https://ankiweb.net/shared/info/1933645497) plugin.
 
 ```
 1933645497
 ```
 
-If you also want to be able to use the interactive tooltip while hovering over certain words, you'll need [kleinerpirat's Anki Tooltip](https://ankiweb.net/shared/info/1840818335)
+Optional: If you also want to be able to use the interactive tooltip while hovering over certain words, you'll need [kleinerpirat's Anki Tooltip](https://ankiweb.net/shared/info/1840818335)
 
 ```
 1840818335
