@@ -3,10 +3,8 @@
 <img width="727" alt="cloze_programming_anki_AC_2_JP" src="https://user-images.githubusercontent.com/116316499/235375635-113cbf00-516b-4859-8b01-9690246a26e8.png">
 
 ## About
-I was inspired by the UI design from Animal Crossing, so I decided to make something similar for Anki.
-Considering I have a dark mode theme of Anki, this theme caters for the Light Mode users.
 
-This theme is sort of a branch from the original Dark Mode, but it features a new rewrite of the code, making it much easier to read and manage for future additions.
+This theme is partially based on my Dark Mode Anki theme, but it features a new rewrite of the code, making it much easier to read and manage for future additions.
 
 Unlike the minimalist mode, this relies on fewer dependencies, and only the appearance-related plugins are kept.
 
@@ -16,9 +14,9 @@ Overall, I'm quite happy of the UX experience this theme provides, as the behavi
 
 ## What's New?
 
-- Subject / Note types are now colored labels that change depending on the subject studied. 
+- Subject / Note types are now coloured labels that change depending on the subject studied. 
 > JavaScript has a yellow label, HTML red, CSS blue and so-on. The default is gray to represent an unknown type.
-> For a good UX, I've added some unused colors, a standard color list for common web development programming languages and encapsulated the code so it's easy to put your own color if it's not there.
+> For a good UX, I've added some unused colours, a standard colour list for common web development programming languages and encapsulated the code so it's easy to put your own colour if it's not there.
 
 - Type Auto-Correct
 > If you're like me and don't feel like spelling Javascript or Typescript correctly (correct being: JavaScript/TypeScript), there is a built-in autocorrector. Feel free to add your own autocorrect code.
@@ -41,6 +39,26 @@ Overall, I'm quite happy of the UX experience this theme provides, as the behavi
 
 - New CSS animations for flashcard front-back transitions
 > Some elements have pop-in animations to stagger the clunky DOM reload from Anki.
+
+## Dependencies
+
+If you'd like to use the programming cards, you'll need to have the [Fill the blanks](https://ankiweb.net/shared/info/1933645497) plugin.
+
+Anki Toolbar > Add-ons > Get Add-ons...
+
+```
+1933645497
+```
+
+If you also want to be able to use the interactive tooltip while hovering over certain words, you'll need [kleinerpirat's Anki Tooltip](https://ankiweb.net/shared/info/1840818335)
+
+```
+1840818335
+```
+
+After installing the add-ons, restart your Anki client. There's nothing else to do, as the cards are already configured to load in the script from the tooltips & make use of the `Fill the blanks` plugin.
+
+If you have issues with the tooltip, you can remove the line of code that loads in the Tooltip script at the beginning of the Front/Back, and re-install it using the plugin itself (this will automatically re-append the script to your cards with your computer's file path).
 
 ## More about the timer logic...
 
