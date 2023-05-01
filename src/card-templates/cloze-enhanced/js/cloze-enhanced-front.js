@@ -1,25 +1,25 @@
 var typeColors = {
-    "javascript": { color: "#e8b001", colorName: "Yellow" },
-    "typescript": { color: "#00A6ED", colorName: "Light Blue" },
-    "css": { color: "#60d6fc", colorName: "Blue" },
-    "html": { color: "#ff7714", colorName: "Orange" },
-    "web development": { color: "#606ee8", colorName: "Purple" },
-    "programming": { color: "#7a5634", colorName: "Brown" },
-    "git": { color: "#f05032", colorName: "Git Orange" },
-    "browsers": { color: "#B19CD9", colorName: "Lavender" },
-    "node.js": { color: "#7CB701", colorName: "Lime" },
-    "react": { color: "#f06595", colorName: "Pink" },
-    "rust": { color: "#DEA584", colorName: "Sandy Brown" },
-    "vue.js": { color: "#41B883", colorName: "Greenish Teal" },
-    "tailwind": { color: "#38B2AC", colorName: "Turquoise" },
-    "docker": { color: "#0db7ed", colorName: "Sky Blue" },
-    "mysql": { color: "#F29111", colorName: "Orange Red" },
-    "bash": { color: "#000000", colorName: "Black" },
-    "Unused1": { color: "#f44336", colorName: "Red" },
-    "Unused2": { color: "#ff4081", colorName: "Pink" },
-    "Unused3": { color: "#009688", colorName: "Teal" },
-    "Unused4": { color: "#1E1E50", colorName: "Navy Blue" }
-  };
+  "javascript": { color: "#e8b001", colorName: "Yellow" },
+  "typescript": { color: "#00A6ED", colorName: "Light Blue" },
+  "css": { color: "#0d47a1", colorName: "Dark Blue" },
+  "html": { color: "#ff7714", colorName: "Orange" },
+  "web development": { color: "#606ee8", colorName: "Purple" },
+  "programming": { color: "#7a5634", colorName: "Brown" },
+  "git": { color: "#f05032", colorName: "Git Orange" },
+  "browsers": { color: "#B19CD9", colorName: "Lavender" },
+  "node.js": { color: "#7CB701", colorName: "Lime" },
+  "react": { color: "#61DAFB", colorName: "Cyan" },
+  "rust": { color: "#DEA584", colorName: "Sandy Brown" },
+  "vue.js": { color: "#41B883", colorName: "Greenish Teal" },
+  "tailwind": { color: "#38B2AC", colorName: "Turquoise" },
+  "docker": { color: "#0db7ed", colorName: "Sky Blue" },
+  "mysql": { color: "#F29111", colorName: "Orange Red" },
+  "bash": { color: "#000000", colorName: "Black" },
+  "Unused1": { color: "#f44336", colorName: "Red" },
+  "Unused2": { color: "#ff4081", colorName: "Pink" },
+  "Unused3": { color: "#009688", colorName: "Teal" },
+  "Unused4": { color: "#1E1E50", colorName: "Navy Blue" }
+};
   
   
   var typeElement = document.getElementById("type");
