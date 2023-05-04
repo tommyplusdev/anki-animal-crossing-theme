@@ -4,7 +4,7 @@
 
 ## About
 
-This theme is partially based on my Dark Mode Anki theme, but it features a new rewrite of the code, making it much easier to read and manage for future additions.
+This theme is partially based on my minimalist Dark Mode Anki repo, but it features a new rewrite of the code, making it much easier to read and manage for future additions.
 
 Unlike the minimalist mode, this relies on fewer dependencies, and only the appearance-related plugins are kept.
 
