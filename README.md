@@ -42,6 +42,8 @@ Overall, I'm quite happy of the UX experience this theme provides, as the behavi
 
 ## Installation
 
+From `Anki 2.1.57+`, there may be a new setting in the Preferences tab for **Minimalist mode**. It **must** be turned on, as the new Anki has changes to the Anki default CSS with new classes/selectors.
+
 If you just want the card templates (minus the UI), pull/download the `.apkg` file, then open it (opens in Anki). This includes a test deck pre-formatted with the right styling.
 
 Also, to get the right fonts, unzip the `fonts.zip` and install these on your System. Otherwise, there are fallback fonts. (Future Improvement: add similar fallback fonts)
@@ -60,7 +62,15 @@ For the general UI styling, you'll need the [Custom Background Image and Gear Ic
 
 You'll need to replace the default `user_files` with the one included with this theme (`anki-ui/user_files`). Select the Plugin and click `View Files` to open up the right file path.
 
-After, enter the `Custom Background Image and Gear Icon` configuration and change the background setting to the `dot_tile_animal_crossing_bg.png` file.
+After, enter the `Custom Background Image and Gear Icon` configuration and change the background setting to the `dot_tile_animal_crossing_bg.png` file and change the icon to `gears.svg`.
+
+You will also need the [Pass/Fail add-on](https://ankiweb.net/shared/info/876946123) that will remove the 4 buttons and simplify it to just 2 buttons. 
+
+```
+876946123
+```
+
+As a side note, it's also recommended that you use [FSRS4Anki](https://github.com/open-spaced-repetition/fsrs4anki) and the [helper add-on to reschedule cards](https://ankiweb.net/shared/info/759844606) for a more accurate algorithm that schedules your cards (results in a better lower card review to memory retention ratio, according to the research papers).
 
 That's all you need, but I recommend these optional plugins for the complete UX experience.
 
@@ -74,7 +84,7 @@ You'll need to change the timer to a suitable answer timeframe for you. I recomm
 
 <img width="484" alt="timer_config" src="https://user-images.githubusercontent.com/116316499/235377464-87288f7d-51fc-4cde-a19a-90fc0501aa6b.png">
 
-Bonus: The included default timer sound effect (SFX) is annoying, so I've added a Animal Crossing jingle `.mp3` file in this theme. You'll need to visit the local files and replace the default SFX with the new SFX.
+Bonus: The included default timer sound effect (SFX) is annoying, so I've added a Animal Crossing jingle `.mp3` file in this theme. You'll need to visit the local files and replace the default SFX with the new SFX (delete or backup old, replace with SFX file. The plugin automatically loads whichever audio file is in the folder).
 
 Optional: If you'd like to use the programming cards, you'll need to have the [Fill the blanks](https://ankiweb.net/shared/info/1933645497) plugin.
 
@@ -88,7 +98,7 @@ Optional: If you also want to be able to use the interactive tooltip while hover
 1840818335
 ```
 
-NOTE: This plugin will break any code that contains either a `<` or `>` i.e. HTML or Markdown code [(See here.)](https://github.com/kleinerpirat/anki-tooltips/issues/6)
+NOTE: This plugin will break any HTML code that contains either a `<` or `>` [(See here.)](https://github.com/kleinerpirat/anki-tooltips/issues/6). If you don't do programming cards, then it's safe to install this plugin.
 
 After installing the add-ons, restart your Anki client. There's nothing else to do, as the cards are already configured to load in the script from the tooltips & make use of the `Fill the blanks` plugin.
 
