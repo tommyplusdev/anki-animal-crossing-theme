@@ -1,6 +1,14 @@
-:root.night-mode {
+:root {
     --canvas: transparent !important;
     --border-subtle: transparent !important;
+    --ui-font:"FOT-Seurat Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif !important; /* FOT-Seurat Pro B*/;
+    --primary-font-color:#81715c;
+}
+
+body::before {
+  background-size: auto !important;
+  background-repeat: repeat !important;
+  background-position: top !important;
 }
 
 /* remove top border from new anki 2.1.55+ styling */
@@ -8,38 +16,27 @@ table {
   border-top: none !important;
 }
 
-/* bottom toolbar background */
-table {
-    border-top: none !important;
-    /* background: #121212 !important; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none !important; */
+#outer {
+  border-top: none !important;
 }
-
-/* .nightMode #outer {
-  border-top-color: #121212 !important;
-} */
-
 
 /* All buttons at the bottom of the review screen
    (including the "Edit" and "More" button) */
 
 button {
     box-sizing: border-box !important;
-    --ui-font:"FOT-Seurat Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif !important; /* FOT-Seurat Pro B*/
-    font-weight: 700;
-    color: #898069;
+    color: var(--primary-font-color);
     height: 6.5rem;
     width: 6.5rem;
-    font-size: 0.725rem !important;
+    font-size: 0.695rem !important;
     border-radius: 50% !important;
     outline: none;
     cursor: pointer;
     background: #fffbe7 !important;
     border: none !important;
     text-transform: lowercase;
+    position:relative;
+    -webkit-touch-callout: none; /* disable default tooltip in WebKit-based browsers, or at-least try to in Anki's browser */
 }
 
 button:hover {
@@ -48,15 +45,7 @@ button:hover {
 }
 
 button:focus {
-  border: 1px solid #aef745 !important;
-}
-
-button span {
-  color: white;
-}
-
-button:focus {
-  border: 1px solid #aef745;
+  border: 3px dotted #ece1be !important;
 }
 
 
@@ -101,6 +90,8 @@ button[onclick*="ease1"]:not(#defease):hover{
 button[onclick*="ease1"]:not(#defease):focus{
   border: 1px solid #F79539 !important;
 }
+
+/* these buttons are unavailable with the pass/fail add-on */
 
 /* the "Hard" button */
 /* button[onclick*="ease2"]:not(#defease) {
@@ -175,9 +166,77 @@ tr {
   }
 }
 
+/* button tooltip */
+button:not([title=""]):hover::before {
+  content: attr(title);
+  background-color: #333;
+  color: #fff;
+  font-size: 0.975em;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, calc(100% + 5px));
+  left: 50%;
+  visibility: visible;
+  transition: all 0.3s ease-out, visibility 0s linear 3s;
+}
+
+button:not([title=""]):hover::before {
+  opacity: 1;
+  transition-delay: 3s;
+}
+
+/* button text & text above toolbar */
+button,
+button > span,
+.new-count,
+.learn-count,
+.review-count {
+  font-family: var(--ui-font);
+  font-weight: 700;
+}
+
+button > span {
+  font-weight: 700;
+  color: var(--primary-font-color);
+}
+
+/* timer appearance for the speed focus Anki add-on */
+span#spdfTime:not(:empty) {
+  display: inline-block;
+  top: 10px;
+  background: #fffbe5;
+  border: 3px solid orange;
+  border-radius: 17px;
+  padding: 2px 12px;
+  color: orange;
+  font-family: "nintendoP_Humming-E_002pr";
+  font-weight: 700;
+  font-size: 0.975em;
+}
+
+span.stattxt {
+  background: #bba83e;
+  border-radius: 17px;
+  padding: 0px 14px;
+  top: 4px;
+}
+
+span.stattxt > * {
+  color: #fffbe5 !important;
+}
+
 td#spdfControls {
   margin-right: 3rem;
 }
+
+/* remove the "more" button because the speed focus add-on is installed...*/
 
 td.stat:last-child {
   display: none;

@@ -1,7 +1,8 @@
-body {
-  background: #121212 !important;
+body::before {
+  background-size: auto !important;
+  background-repeat: repeat !important;
+  background-position: top !important;
 }
-
 
 .icon-button[disabled].svelte-zmy5ws, .icon-button[disabled].svelte-zmy5ws:hover {
   background-color: none !important;

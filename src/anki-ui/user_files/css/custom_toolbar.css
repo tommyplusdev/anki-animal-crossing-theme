@@ -1,37 +1,44 @@
-:root.night-mode {
-    --canvas: transparent !important;
-    --border-subtle: transparent !important;
+:root {
+  --canvas: transparent !important;
+  --border-subtle: transparent !important;
+  --ui-font:"FOT-Seurat Pro", "Untitled Sans", "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif !important; /* FOT-Seurat Pro B*/;
+  --primary-font-color:#81715c;
+  --wrapper-background-color: #fffbe7;
+  --accent-font-color: #10b5ce;
+}
+
+body::before {
+  background-size: auto !important;
+  background-repeat: repeat !important;
+  background-position: top !important;
 }
 
 /* top toolbar elements */
 .hitem {
-  color: hsla(0, 0%, 100%, 0.5);
-  font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Open Sans","Lucida Sans", arial, sans-serif !important;
-  font-weight: 500;
+  font-family: var(--ui-font);
+  color: var(--primary-font-color);
+  font-weight: 700;
   text-transform: lowercase;
 }
 
 .hitem:hover {
-  color: #aef745 !important;
-  text-decoration: underline;
+  color: var(--accent-font-color);
+  text-decoration: underline dashed;
   text-underline-offset: 3px;
-  text-decoration-thickness: 7px;
 }
 
 .hitem.full-sync {
   color: #ff5b5b;
 }
 
-/* make top toolbar black & beautify it */
 
-/* #outer{
-  background: #121212 !important;
-} */
-
-/* td.tdcenter,
-.hitem {
-  background: #121212 !important;
-} */
+/* table appearance  */
+td.tdcenter,
+td.tdcenter > *,
+td.tdcenter:hover,
+td.tdcenter > *:hover {
+  background: var(--wrapper-background-color);
+}
 
 table#header {
   border: none !important;
@@ -41,6 +48,36 @@ td.tdcenter {
   border: none !important;
 }
 
+/* center the table a bit */
 table {
   margin-top: 3px !important;
+}
+
+
+/* add button tooltips only if the screen real-estate allows for it */
+@media screen and (min-width: 41em) {
+  .hitem:not([title=""]):hover::before {
+    content: attr(title);
+    background-color: #333;
+    color: #fff;
+    font-size: 0.975em;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: fixed !important;
+    z-index: 3;
+    white-space: nowrap;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    left: 50%;
+    transform: translate(160%, -15%);
+    visibility: visible;
+    transition: all 0.3s ease-out, visibility 0s linear 3s;
+  }
+  
+  .hitem:not([title=""]):hover::before {
+    opacity: 1;
+    transition-delay: 3s;
+  }
 }
